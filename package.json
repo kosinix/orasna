@@ -1,7 +1,6 @@
 {
   "name": "orasna",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
   "description": "Zero-dependency helpers on top of the native JavaScript Temporal API: comparisons, formatting, intervals, spans, working days, clocks, and JSON/HTML/database interop.",
   "type": "module",
   "sideEffects": false,
@@ -63,7 +62,8 @@
     "check": "npm run types && npm test",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run check"
   },
   "keywords": [
     "temporal",
@@ -79,7 +79,7 @@
     "type": "git",
     "url": "git+https://github.com/kosinix/orasna.git"
   },
-  "homepage": "https://github.com/kosinix/orasna#readme",
+  "homepage": "https://kosinix.github.io/orasna/",
   "bugs": {
     "url": "https://github.com/kosinix/orasna/issues"
   },

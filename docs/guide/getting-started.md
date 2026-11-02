@@ -2,13 +2,11 @@
 
 # Installation
 
-Install it from GitHub, pinned to a release tag:
+Install it from npm:
 
 ```sh
-npm install github:kosinix/orasna#v0.1.0
+npm install orasna
 ```
-
-This adds `"orasna": "github:kosinix/orasna#v0.1.0"` to your `package.json`, and you import it as `orasna`. Without `#v0.1.0`, npm installs whatever is on the default branch at install time, and your lockfile pins that commit. To upgrade, change the tag and run `npm install` again.
 
 orasna needs a global `Temporal`. It does not bundle a polyfill, so the app decides whether to load one.
 
@@ -50,15 +48,15 @@ Every module is also available on its own path, such as `orasna/compare`.
 
 You don't need npm or a bundler to use orasna in a web page. The source is plain ES modules that import each other by relative path, so a browser can load it from a CDN or from your own server.
 
-Add an [import map](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap) so that `orasna` resolves to a URL. Your scripts can then use the same imports as Node code. The example below loads a pinned release from jsDelivr, which serves files straight from GitHub tags:
+Add an [import map](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap) so that `orasna` resolves to a URL. Your scripts can then use the same imports as Node code. The example below loads a pinned release from jsDelivr, which serves files straight from npm:
 
 ```html
 <script type="importmap">
 {
   "imports": {
-    "orasna": "https://cdn.jsdelivr.net/gh/kosinix/orasna@v0.1.0/src/index.js",
-    "orasna/business": "https://cdn.jsdelivr.net/gh/kosinix/orasna@v0.1.0/src/business.js",
-    "orasna/interop": "https://cdn.jsdelivr.net/gh/kosinix/orasna@v0.1.0/src/interop.js"
+    "orasna": "https://cdn.jsdelivr.net/npm/orasna@0.2.0/src/index.js",
+    "orasna/business": "https://cdn.jsdelivr.net/npm/orasna@0.2.0/src/business.js",
+    "orasna/interop": "https://cdn.jsdelivr.net/npm/orasna@0.2.0/src/interop.js"
   }
 }
 </script>
@@ -96,6 +94,6 @@ Add an [import map](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/
 Things to know:
 
 - **Polyfill order.** Importing orasna before the polyfill loads is fine, because orasna only looks for `Temporal` when one of its functions runs. Do call functions only after the polyfill has loaded. In the example, the `await` ensures that.
-- **Pin the version.** Keep `@v0.1.0` (or another release tag) in every URL, so a new release can't change your page. Map only the subpaths you use. `orasna/db` is for servers and isn't needed in a browser.
+- **Pin the version.** Keep `@0.2.0` (or another exact version) in every URL, so a new release can't change your page. Map only the subpaths you use. `orasna/db` is for servers and isn't needed in a browser.
 - **Self-hosting.** To serve the files yourself, copy the contents of the repository's `src/` folder (including `internal/`) to your site, for example into `/vendor/orasna/`, and point the import map there: `"orasna": "/vendor/orasna/index.js"`. Do the same with `temporal-polyfill`'s `global.min.js` if you need it.
 - **Serve over HTTP.** Browsers don't load ES modules from `file://` pages. Open the page through a web server, even a local one.

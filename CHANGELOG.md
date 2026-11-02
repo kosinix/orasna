@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-02
+
 ### Added
 
 - `compare`: chainable `is(value)` with `before`, `after`, `sameOrBefore`, `sameOrAfter`, `sameMomentAs`, and `between`, as another way to write the existing comparison functions. Exported from the root entry.
+- Documentation site at https://kosinix.github.io/orasna/.
+
+### Changed
+
+- The package is published to npm. Install it with `npm install orasna` instead of from a GitHub tag.
 
 ## [0.1.0] - 2026-11-02
 
