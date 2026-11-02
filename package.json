@@ -60,7 +60,10 @@
     "test": "node --test --import ./test/setup.js \"test/**/*.test.js\"",
     "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"test/**\" --import ./test/setup.js \"test/**/*.test.js\"",
     "types": "tsc -p tsconfig.json",
-    "check": "npm run types && npm test"
+    "check": "npm run types && npm test",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "keywords": [
     "temporal",
@@ -82,6 +85,7 @@
   },
   "devDependencies": {
     "temporal-polyfill": "1.0.6",
-    "typescript": "7.0.2"
+    "typescript": "7.0.2",
+    "vitepress": "^1.6.4"
   }
 }
