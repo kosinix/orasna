@@ -12,7 +12,7 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'API', link: '/api/compare' },
       { text: 'Recipes', link: '/guide/recipes' },
-      { text: 'Changelog', link: 'https://github.com/kosinix/orasna/blob/main/CHANGELOG.md' },
+      { text: 'Changelog', link: 'https://github.com/kosinix/orasna/blob/master/CHANGELOG.md' },
     ],
     sidebar: [
       {
@@ -44,7 +44,7 @@ export default defineConfig({
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/kosinix/orasna' }],
     editLink: {
-      pattern: 'https://github.com/kosinix/orasna/edit/main/docs/:path',
+      pattern: 'https://github.com/kosinix/orasna/edit/master/docs/:path',
       text: 'Edit this page on GitHub',
     },
     footer: {
