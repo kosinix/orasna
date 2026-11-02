@@ -1,0 +1,87 @@
+{
+  "name": "orasna",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zero-dependency helpers on top of the native JavaScript Temporal API: comparisons, formatting, intervals, spans, working days, clocks, and JSON/HTML/database interop.",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./compare": {
+      "types": "./types/compare.d.ts",
+      "default": "./src/compare.js"
+    },
+    "./calendar": {
+      "types": "./types/calendar.d.ts",
+      "default": "./src/calendar.js"
+    },
+    "./span": {
+      "types": "./types/span.d.ts",
+      "default": "./src/span.js"
+    },
+    "./format": {
+      "types": "./types/format.d.ts",
+      "default": "./src/format.js"
+    },
+    "./interval": {
+      "types": "./types/interval.d.ts",
+      "default": "./src/interval.js"
+    },
+    "./clock": {
+      "types": "./types/clock.d.ts",
+      "default": "./src/clock.js"
+    },
+    "./business": {
+      "types": "./types/business.d.ts",
+      "default": "./src/business.js"
+    },
+    "./interop": {
+      "types": "./types/interop.d.ts",
+      "default": "./src/interop.js"
+    },
+    "./db": {
+      "types": "./types/db.d.ts",
+      "default": "./src/db.js"
+    }
+  },
+  "files": [
+    "src",
+    "types",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test --import ./test/setup.js \"test/**/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"test/**\" --import ./test/setup.js \"test/**/*.test.js\"",
+    "types": "tsc -p tsconfig.json",
+    "check": "npm run types && npm test"
+  },
+  "keywords": [
+    "temporal",
+    "date",
+    "time",
+    "interval",
+    "business-days",
+    "timezone"
+  ],
+  "license": "MIT",
+  "author": "kosinix",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kosinix/orasna.git"
+  },
+  "homepage": "https://github.com/kosinix/orasna#readme",
+  "bugs": {
+    "url": "https://github.com/kosinix/orasna/issues"
+  },
+  "devDependencies": {
+    "temporal-polyfill": "1.0.6",
+    "typescript": "7.0.2"
+  }
+}
